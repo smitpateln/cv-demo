@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="cv.html">HOME</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="cv.html">About </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="exp.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Experience 
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="exp.html">at tata communication</a></li>
+                  <li><a class="dropdown-item" href="exp.html">at adani group</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="exp.html">internship</a></li>
+                </ul>
+              </li>
+
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Education.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Skills.html">Skills</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="Contact .html">Contact</a>
+           </ul>    
+          </div>
+        </div>
+      </nav>
+      <br>
+
+
+
+
+    <div class="container">
+        <canvas id="columnChart"></canvas>
+    </div>
+
+    <script>
+        var data = {
+            labels: ['Java', 'C', 'C++', 'HTML', 'JavaScript', 'CSS', 'SQL'],
+            datasets: [{
+                label: 'Performance',
+                data: [90, 85, 80, 70, 95, 75, 85], // Your performance data here
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100 // You can set a max value if needed
+                }
+            }
+        };
+
+        var ctx = document.getElementById('columnChart').getContext('2d');
+
+        var columnChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;">HTML/CSS (90%)</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%;">JavaScript (85%)</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%;">Python (75%)</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <span class="badge badge-primary">Communication</span>
+                <span class="badge badge-primary">Teamwork</span>
+                <span class="badge badge-primary">Problem Solving</span>
+                <span class="badge badge-primary">Time Management</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
